@@ -1,0 +1,27 @@
+### API Full Index
+POST http://localhost:3000/characters.json
+Content-Type: application/json
+
+{
+  "name": "Leader"
+}
+
+### API First Image
+POST http://localhost:3000/photos.json
+Content-Type: application/json
+
+{
+  "name": "Hulk"
+}
+
+### API Character List
+GET http://localhost:3000/character_list.json
+
+
+### API Character - Starts With:
+POST http://localhost:3000/character_list/starts_with.json
+Content-Type: application/json
+
+{
+  "letters": "Spider"
+}
