@@ -1,27 +1,80 @@
 ### API Full Index
-POST http://localhost:3000/characters.json
+GET http://localhost:3000/characters.json
 Content-Type: application/json
 
 {
-  "name": "Leader"
+  "name": "Apocalypse"
 }
 
 ### API First Image
-POST http://localhost:3000/photos.json
+GET http://localhost:3000/photos.json
 Content-Type: application/json
 
 {
   "name": "Hulk"
 }
 
+### API First Image - By ID
+GET http://localhost:3000/photos/by_id.json
+Content-Type: application/json
+
+{
+  "character_id": "1009156"
+}
+
+
 ### API Character List
 GET http://localhost:3000/character_list.json
 
 
 ### API Character - Starts With:
-POST http://localhost:3000/character_list/starts_with.json
+GET http://localhost:3000/character_list/starts_with.json
 Content-Type: application/json
 
 {
-  "letters": "Spider"
+  "letters": "Silver_Surfer"
 }
+
+
+### API Character - By ID:
+GET http://localhost:3000/characters/1009610.json
+# Content-Type: application/json
+
+# {
+#   "character_id": 1009610
+# }
+
+### API Cover Art by Comic ID
+GET http://localhost:3000/comics/stories_art.json
+Content-Type: application/json
+
+{
+  "comic_id": 66602
+}
+
+### API Returns Marvel URL by adding Auth
+GET http://localhost:3000/comics/stories_art.json
+Content-Type: application/json
+
+{
+  "comic_id": 66602
+}
+
+
+
+
+### API Stories by Stories ID
+GET http://localhost:3000/marvel_link.json
+Content-Type: application/json
+
+{
+  "raw_marvel_url": "http://gateway.marvel.com/v1/public/comics/4470"
+}
+
+
+
+
+
+
+
+

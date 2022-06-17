@@ -5,6 +5,10 @@ class CharactersController < ApplicationController
     return "v1/public/characters?name=#{input}&"
   end
 
+  def character_id(input)
+    return "/v1/public/characters/#{input}?"
+  end
+
   def images(path)
     return "#{path}/detail.jpg"
   end
@@ -42,6 +46,23 @@ class CharactersController < ApplicationController
     response = url_handler(character)
     marvel_data = JSON.parse(response.body)
     render json: marvel_data
+  end
+
+  def character_by_id
+    input = params["character_id"]
+    character_id_path = character_id(input)
+    response = url_handler(character_id_path)
+    character = JSON.parse(response.body)
+    render json: character
+  end
+
+  def photos_by_id
+    input = params["character_id"]
+    character_id_path = character_id(input)
+    response = url_handler(character_id_path)
+    endpoint = JSON.parse(response.body)["data"]["results"][0]["thumbnail"]["path"]
+    photo = images(endpoint)
+    render json: photo
   end
 
   

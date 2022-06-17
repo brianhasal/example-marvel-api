@@ -7,6 +7,10 @@ def characters(input)
   return "v1/public/characters?name=#{input}&"
 end
 
+def character_id(input)
+  return "/v1/public/characters/#{input}?"
+end
+
 def comics(input_code)
   return "v1/public/comics/#{input_code}?"
 end
